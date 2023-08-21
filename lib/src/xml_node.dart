@@ -1,7 +1,7 @@
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
+
 import './helpers/delimiters.dart';
-import 'helpers/formatters.dart' as helpers;
 import './nodes/dtd/xml_attlist.dart';
 import './nodes/dtd/xml_etd.dart';
 import './nodes/xml_attribute.dart';
@@ -16,6 +16,7 @@ import './nodes/xml_notation.dart';
 import './nodes/xml_processing_instruction.dart';
 import './nodes/xml_text.dart';
 import './xml_document.dart';
+import 'helpers/formatters.dart' as helpers;
 
 export './nodes/dtd/xml_attlist.dart';
 export './nodes/dtd/xml_etd.dart';
@@ -363,7 +364,7 @@ abstract class XmlNode {
   ///
   /// Returns `null` if the [uri] can't be reached or no valid XML nodes
   /// are found in the returned document.
-  static Future<dynamic?> fromUri(
+  static Future<dynamic> fromUri(
     String uri, {
     bool parseCharacterEntities = true,
     bool parseComments = false,
